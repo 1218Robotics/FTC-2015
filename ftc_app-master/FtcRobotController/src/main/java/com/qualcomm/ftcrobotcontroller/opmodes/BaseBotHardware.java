@@ -18,6 +18,8 @@ public class BaseBotHardware extends OpMode {
     protected DcMotor frontRightDriveMotor;
     protected DcMotor rearRightDriveMotor;
 
+    protected Servo servo1;
+
     @Override
     public void init() {
         telemetry.addData("Init:","Running");
@@ -31,9 +33,13 @@ public class BaseBotHardware extends OpMode {
         frontRightDriveMotor = hardwareMap.dcMotor.get("Front Right Drive Motor");
         rearRightDriveMotor = hardwareMap.dcMotor.get("Rear Right Drive Motor");
 
-        frontRightDriveMotor.setDirection(DcMotor.Direction.REVERSE);
-        rearRightDriveMotor.setDirection(DcMotor.Direction.REVERSE);
+        frontLeftDriveMotor.setDirection(DcMotor.Direction.REVERSE);
+        rearLeftDriveMotor.setDirection(DcMotor.Direction.REVERSE);
+
+        servo1 = hardwareMap.servo.get("Servo 1");
+
         telemetry.addData("Init:","finished");
+
 
     }
 
@@ -95,7 +101,6 @@ public class BaseBotHardware extends OpMode {
 
         return lScale;
 
-    } // scale_motor_power
-    // P
+    }
 }
 //TESTING
