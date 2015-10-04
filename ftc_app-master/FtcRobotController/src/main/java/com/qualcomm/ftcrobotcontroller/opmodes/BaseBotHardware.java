@@ -1,13 +1,21 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-import com.qualcomm.robotcore.hardware.*;
+import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorController;
+import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
+import com.qualcomm.robotcore.hardware.DigitalChannelController;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.ServoController;
 import com.qualcomm.robotcore.util.Range;
 
 /**
  * Created by jliu on 9/30/15.
  */
 public class BaseBotHardware extends OpMode {
+    final boolean HIGH = true;
+    final boolean LOW = false;
+
     protected DcMotorController leftDriveMotorController;
     protected DcMotorController rightDriveMotorController;
     protected DeviceInterfaceModule deviceInterfaceModule;
@@ -102,5 +110,34 @@ public class BaseBotHardware extends OpMode {
         return lScale;
 
     }
+
+    //this function sets IO mode of a digital pin
+    protected void pinMode(int port, DigitalChannelController.Mode mode){
+        deviceInterfaceModule.setDigitalChannelMode(port,mode);
+    }
+
+    protected boolean digitalRead(int port){
+        return(deviceInterfaceModule.getDigitalChannelState(port));
+    }
+
+    protected void digitalWrite(int port,boolean state){
+        deviceInterfaceModule.setDigitalChannelState(port,state);
+    }
+
+    protected int analogRead(int port){
+        return(deviceInterfaceModule.getAnalogInputValue(port));
+    }
+
+    protected void setPwmFrequency(int port,int frequency){
+        int period = 10 ^6/frequency;
+        deviceInterfaceModule.setPulseWidthPeriod(port,period);
+    }
+
+
+    //vaule is a float from 0 to 1 as the percentage of time output high
+    protected void pwmWrite(int port, float vaule){
+        int onTime = (int)(deviceInterfaceModule.getPulseWidthPeriod(port)*vaule);
+        deviceInterfaceModule.setPulseWidthOutputTime(port,onTime);
+    }
+
 }
-//TESTING
