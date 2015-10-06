@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.robocol.Telemetry;
 public class BaseBotTelemetry extends BaseBotHardware {
     protected boolean displayMotorPowers = false;
     protected boolean displayServoPosition = false;
+
     protected void updateTelemetry(){
         if(displayMotorPowers) {
             telemetry.addData("Front Left Power:", frontLeftDriveMotor.getPower());

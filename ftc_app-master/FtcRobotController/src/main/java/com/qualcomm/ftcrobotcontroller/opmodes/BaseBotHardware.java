@@ -36,13 +36,15 @@ public class BaseBotHardware extends OpMode {
         deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get("Core Interface Module");
         servoController = hardwareMap.servoController.get("Servo Controller");
 
-        frontLeftDriveMotor = hardwareMap.dcMotor.get("Front Left Drive Motor");
-        rearLeftDriveMotor = hardwareMap.dcMotor.get("Rear Left Drive Motor");
-        frontRightDriveMotor = hardwareMap.dcMotor.get("Front Right Drive Motor");
-        rearRightDriveMotor = hardwareMap.dcMotor.get("Rear Right Drive Motor");
+        frontLeftDriveMotor = hardwareMap.dcMotor.get("Front Right Drive Motor");
+        rearLeftDriveMotor = hardwareMap.dcMotor.get("Rear Right Drive Motor");
+        frontRightDriveMotor = hardwareMap.dcMotor.get("Front Left Drive Motor");
+        rearRightDriveMotor = hardwareMap.dcMotor.get("Rear Left Drive Motor");
 
         frontLeftDriveMotor.setDirection(DcMotor.Direction.REVERSE);
         rearLeftDriveMotor.setDirection(DcMotor.Direction.REVERSE);
+
+        pinMode(1, DigitalChannelController.Mode.OUTPUT);
 
         servo1 = hardwareMap.servo.get("Servo 1");
 

@@ -31,8 +31,8 @@ public class BaseBotManual extends BaseBotTelemetry{
 
         {
             float leftDrivePower;
-            leftDrivePower = scaleMotorPower(-gamepad1.left_stick_y);
-            float rightDrivePower = scaleMotorPower(-gamepad1.right_stick_y);
+            leftDrivePower = scaleMotorPower(gamepad1.left_stick_y);
+            float rightDrivePower = scaleMotorPower(gamepad1.right_stick_y);
 
             setLeftDrivePower(leftDrivePower);
             setRightDrivePower(rightDrivePower);
