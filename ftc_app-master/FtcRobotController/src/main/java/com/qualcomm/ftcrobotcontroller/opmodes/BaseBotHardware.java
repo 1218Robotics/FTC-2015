@@ -16,6 +16,12 @@ public class BaseBotHardware extends OpMode {
     final boolean HIGH = true;
     final boolean LOW = false;
 
+    protected final double countsPerRotation = 1120;
+    protected final double wheelDiameter = 4.75;
+    protected final double wheelCircumference = wheelDiameter *3.1415;
+    protected final double distancePerCount = wheelCircumference/countsPerRotation;
+
+
     protected DcMotorController leftDriveMotorController;
     protected DcMotorController rightDriveMotorController;
     protected DeviceInterfaceModule deviceInterfaceModule;
