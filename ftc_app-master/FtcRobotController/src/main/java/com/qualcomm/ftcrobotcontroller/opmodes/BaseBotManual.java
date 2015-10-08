@@ -42,6 +42,7 @@ public class BaseBotManual extends BaseBotTelemetry{
 
             updateTelemetry();
 
+
         }
         public void stop(){
 
