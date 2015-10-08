@@ -60,10 +60,14 @@ public class BaseBotLinearHardware extends LinearOpMode {
     }
 
     @Override
-    public void runOpMode(){
+    public void runOpMode() throws InterruptedException{
 
     }
 
+    protected double inchesToCounts(int inches) {
+        return inches/distancePerCount;
+
+    }
 
     protected void setLeftDrivePower(double drivePower){
         frontLeftDriveMotor.setPower(drivePower);
