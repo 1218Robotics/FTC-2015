@@ -21,7 +21,6 @@ public class BaseBotHardware extends OpMode {
     protected final double wheelCircumference = wheelDiameter *3.1415;
     protected final double distancePerCount = wheelCircumference/countsPerRotation;
 
-
     protected DcMotorController leftDriveMotorController;
     protected DcMotorController rightDriveMotorController;
     protected DeviceInterfaceModule deviceInterfaceModule;
@@ -118,6 +117,7 @@ public class BaseBotHardware extends OpMode {
         return lScale;
 
     }
+
 
     //this function sets IO mode of a digital pin
     protected void pinMode(int port, DigitalChannelController.Mode mode){
