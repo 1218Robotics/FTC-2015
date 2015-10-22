@@ -1,6 +1,5 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.ftcrobotcontroller.hardwareinterface.DriveMotor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
 /**
