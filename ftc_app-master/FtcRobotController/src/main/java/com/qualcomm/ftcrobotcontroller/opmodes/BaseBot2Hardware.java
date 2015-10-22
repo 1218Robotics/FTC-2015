@@ -1,9 +1,13 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+<<<<<<< HEAD
 import com.qualcomm.ftcrobotcontroller.hardwareinterface.HalfDrive;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
+=======
+import com.qualcomm.robotcore.hardware.DcMotor;
+>>>>>>> 3d464a9cf46bb0388775f26f0ea4bca902377d47
 
 /**
  * Created by jliu on 10/20/15.
