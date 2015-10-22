@@ -9,11 +9,13 @@ import com.qualcomm.ftcrobotcontroller.hardwareinterface.*;
  * Created by jliu on 10/20/15.
  */
 public abstract class BaseBot2HardwareConfig extends LinearOpMode  {
-    final String leftFrontMotorName = "Motor11";
+    final String leftDriveControllerName = "Motor Controller 1";
+    final String rightDriveControllerName = "Motor Controller 2";
+    final String leftFrontMotorName = "Motor 11";
     final String leftRearMotorName = "Motor 12";
-    final String rightFrontMotorName = "Motor21";
+    final String rightFrontMotorName = "Motor 21";
     final String rightRearMotorName = "Motor 22";
 
-    final DcMotor.Direction leftDirction = DcMotor.Direction.FORWARD;
-    final DcMotor.Direction rightDirction = DcMotor.Direction.REVERSE;
+    final DcMotor.Direction leftDirection = DcMotor.Direction.FORWARD;
+    final DcMotor.Direction rightDirection = DcMotor.Direction.REVERSE;
 }
