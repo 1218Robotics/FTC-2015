@@ -16,8 +16,8 @@ public class HalfDrive {
     protected final double distancePerCount = wheelCircumference/countsPerRotation;
 
 
-    DcMotor front;
-    DcMotor back;
+    public DcMotor front;
+    public DcMotor back;
 
     public int inchesToCounts(double inches) {
         return (int)(inches/distancePerCount);
