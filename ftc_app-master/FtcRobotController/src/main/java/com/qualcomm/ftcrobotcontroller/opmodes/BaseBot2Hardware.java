@@ -1,13 +1,10 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-<<<<<<< HEAD
 import com.qualcomm.ftcrobotcontroller.hardwareinterface.HalfDrive;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotorController;
 import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
-=======
 import com.qualcomm.robotcore.hardware.DcMotor;
->>>>>>> 3d464a9cf46bb0388775f26f0ea4bca902377d47
 
 /**
  * Created by jliu on 10/20/15.
@@ -33,5 +30,11 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
         colorSensor = hardwareMap.colorSensor.get("iic 10");
         deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get("Device Interface Module 1");
 
+    }
+    public void stopRobot(){
+        leftDriveMotor.setPower(0);
+        rightDriveMotor.setPower(0);
+        leftDriveMotor.channelMode(DcMotorController.RunMode.RESET_ENCODERS);
+        rightDriveMotor.channelMode(DcMotorController.RunMode.RESET_ENCODERS);
     }
 }
