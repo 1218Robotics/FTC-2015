@@ -66,6 +66,7 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register("RunLine",DriveLine.class);
     manager.register("BaseBotTest1",BaseBotTest1.class);
+    manager.register("BaseBot2iicTest1",BaseBot2IicTest.class);
 
     /*
      * Uncomment any of the following lines if you want to register an op mode.

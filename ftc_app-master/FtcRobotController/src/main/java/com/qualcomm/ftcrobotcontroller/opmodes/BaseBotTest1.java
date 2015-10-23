@@ -10,8 +10,8 @@ public class BaseBotTest1 extends BaseBot2Auton {
         initRobot();
         deviceInterfaceModule.setDigitalChannelMode(0, DigitalChannelController.Mode.OUTPUT);
         deviceInterfaceModule.setDigitalChannelState(0,false);
-        leftDriveMotor.setPower(1);
-        rightDriveMotor.setPower(1);
+        //leftDriveMotor.setPower(1);
+        //rightDriveMotor.setPower(1);
         while (opModeIsActive()){
             waitOneFullHardwareCycle();
             telemetry.addData("Red:", colorSensor.red());
