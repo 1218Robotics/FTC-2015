@@ -7,6 +7,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 /**
  * Created by rgoudy on 10/13/15.
  */
+@Deprecated
 public class DriveLine extends BaseBotHardware2{
     //HalfDrive leftDrive = new HalfDrive( hardwareMap.dcMotor.get("Front Left Drive Motor"), hardwareMap.dcMotor.get("Rear Right Drive Motor"), DcMotor.Direction.REVERSE);
     //HalfDrive rightDrive = new HalfDrive( hardwareMap.dcMotor.get("Front Right Drive Motor"), hardwareMap.dcMotor.get("Rear Right Drive Motor"), DcMotor.Direction.FORWARD);

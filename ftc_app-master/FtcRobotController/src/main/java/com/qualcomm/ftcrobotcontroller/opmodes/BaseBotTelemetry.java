@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.robocol.Telemetry;
 /**
  * Created by jliu on 10/1/15.
  */
+@Deprecated
 public class BaseBotTelemetry extends BaseBotHardware {
     protected boolean displayMotorPowers = false;
     protected boolean displayServoPosition = false;

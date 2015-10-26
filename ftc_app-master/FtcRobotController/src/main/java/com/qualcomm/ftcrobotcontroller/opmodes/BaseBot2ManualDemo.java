@@ -6,7 +6,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.robotcore.util.*;
 
-public class BaseBot2BaseManual extends BaseBot2Manual {
+public class BaseBot2ManualDemo extends BaseBot2Manual {
     @Override
     protected void mainLoop() {
         double leftDrivePower = gamepad1.left_stick_y;

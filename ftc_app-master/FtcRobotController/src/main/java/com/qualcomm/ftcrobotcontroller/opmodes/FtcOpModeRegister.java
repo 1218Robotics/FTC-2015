@@ -61,14 +61,9 @@ public class FtcOpModeRegister implements OpModeRegister {
     manager.register ("PushBotAuto", PushBotAuto.class);
     manager.register ("PushBotManual", PushBotManual.class);
 
-    manager.register("BaseBot Manual",BaseBotManual.class);
-    manager.register("Runtest",BaseBotAuton.class);
+    manager.register("BaseBot2ColorSensorDemo",BaseBot2ColorSensorDemo.class);
 
-    //manager.register("RunLine",DriveLine.class);
-    manager.register("BaseBotTest1",BaseBotTest1.class);
-    //manager.register("BaseBot2iicTest1",BaseBot2IicTest.class);
-
-    manager.register("BaseBot2Manual", BaseBot2BaseManual.class);
+    manager.register("BaseBot2ManualDemo", BaseBot2ManualDemo.class);
 
     /*
      * Uncomment any of the following lines if you want to register an op mode.
@@ -78,6 +73,7 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("MRRGBExample", MRRGBExample.class);
     //manager.register("ColorSensorDriver", ColorSensorDriver.class);
     //manager.register("HTRGBExample", HTRGBExample.class);
+
 
     //manager.register("IrSeekerOp", IrSeekerOp.class);
     //manager.register("CompassCalibration", CompassCalibration.class);

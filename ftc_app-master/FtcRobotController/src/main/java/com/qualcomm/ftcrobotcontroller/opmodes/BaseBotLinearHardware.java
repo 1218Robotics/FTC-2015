@@ -12,6 +12,7 @@ import com.qualcomm.robotcore.util.Range;
 /**
  * Created by rgoudy on 10/8/15.
  */
+@Deprecated
 public class BaseBotLinearHardware extends LinearOpMode {
 
     final boolean HIGH = true;

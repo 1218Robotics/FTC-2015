@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.util.Range;
 /**
  * Created by jliu on 10/1/15.
  */
+@Deprecated
 public class BaseBotManual extends BaseBotTelemetry{
         //--------------------------------------------------------------------------
         //

@@ -8,6 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
 /**
  * Created by rgoudy on 10/13/15.
  */
+@Deprecated
 public class BaseBotHardware2 extends LinearOpMode {
     HalfDrive leftDrive = new HalfDrive(hardwareMap.dcMotor.get("Front Left Drive Motor"),
             hardwareMap.dcMotor.get("Rear Left Drive Motor"),

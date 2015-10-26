@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
 /**
  * Created by rgoudy on 10/8/15.
  */
+ @Deprecated
 public class BaseBotAuton extends BaseBotLinearHardware {
 
     @Override

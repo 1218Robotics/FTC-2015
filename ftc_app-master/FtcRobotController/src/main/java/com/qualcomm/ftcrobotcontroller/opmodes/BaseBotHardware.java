@@ -12,6 +12,7 @@ import com.qualcomm.robotcore.util.Range;
 /**
  * Created by jliu on 9/30/15.
  */
+@Deprecated
 public class BaseBotHardware extends OpMode {
     final boolean HIGH = true;
     final boolean LOW = false;
