@@ -37,4 +37,8 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
         leftDriveMotor.channelMode(DcMotorController.RunMode.RESET_ENCODERS);
         rightDriveMotor.channelMode(DcMotorController.RunMode.RESET_ENCODERS);
     }
+
+    public boolean isRed(int limit){
+        return colorSensor.red() > limit;
+    }
 }

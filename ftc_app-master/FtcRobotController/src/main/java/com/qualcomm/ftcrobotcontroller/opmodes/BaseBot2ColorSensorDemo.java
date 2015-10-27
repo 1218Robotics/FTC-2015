@@ -15,6 +15,7 @@ public class BaseBot2ColorSensorDemo extends BaseBot2Auton {
             telemetry.addData("Red:", colorSensor.red());
             telemetry.addData("Blue:", colorSensor.blue());
             telemetry.addData("Green:",colorSensor.green());
+
         }
     }
 }
