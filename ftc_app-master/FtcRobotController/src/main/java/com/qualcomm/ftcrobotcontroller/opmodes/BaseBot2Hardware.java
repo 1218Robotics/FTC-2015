@@ -1,19 +1,17 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.ftcrobotcontroller.hardwareinterface.HalfDrive;
-import com.qualcomm.robotcore.hardware.ColorSensor;
-import com.qualcomm.robotcore.hardware.DcMotorController;
-import com.qualcomm.robotcore.hardware.DeviceInterfaceModule;
-import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.*;
 
 /**
  * Created by jliu on 10/20/15.
  */
 public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
-    DcMotorController leftDriveController;
-    DcMotorController rightDriveController;
-    HalfDrive leftDriveMotor;
-    HalfDrive rightDriveMotor;
+    protected DcMotorController leftDriveController;
+    protected DcMotorController rightDriveController;
+    protected HalfDrive leftDriveMotor;
+    protected HalfDrive rightDriveMotor;
+    protected Servo intakeSortingServo;
 
     ColorSensor colorSensor;
     DeviceInterfaceModule deviceInterfaceModule;
@@ -29,6 +27,7 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
                                         rightDirection);
         colorSensor = hardwareMap.colorSensor.get("iic 10");
         deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get("Device Interface Module 1");
+        intakeSortingServo = hardwareMap.servo.get(intakeSortingServoName);
 
     }
     public void stopRobot(){
