@@ -4,7 +4,6 @@ package com.qualcomm.ftcrobotcontroller.opmodes;
  * Created by jliu on 10/25/15.
  */
 
-import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.*;
 
 public class BaseBot2ManualDemo extends BaseBot2Manual {
@@ -14,6 +13,18 @@ public class BaseBot2ManualDemo extends BaseBot2Manual {
         double rightDrivePower = gamepad1.right_stick_y;
         leftDriveMotor.setPower(leftDrivePower);
         rightDriveMotor.setPower(rightDrivePower);
-        intakeSortingServo.setPosition(Range.scale(gamepad2.left_stick_x,-1.0,1.0,0.0,1.0));
+        intakeMotor.setPower(gamepad1.left_trigger);
+        updateFlipper();
+        updateTelemetry();
+    }
+
+    protected void updateFlipper(){
+        if (gamepad1.left_bumper){
+            flipper.setPosition(flipperLeft);
+        }else if(gamepad1.right_bumper){
+            flipper.setPosition(flipperRight);
+        }else{
+            flipper.setPosition(flipperCenter);
+        }
     }
 }

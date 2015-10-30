@@ -9,14 +9,31 @@ import com.qualcomm.ftcrobotcontroller.hardwareinterface.*;
  * Created by jliu on 10/20/15.
  */
 public abstract class BaseBot2HardwareConfig extends LinearOpMode  {
-    final String leftDriveControllerName = "Motor Controller 1";
-    final String rightDriveControllerName = "Motor Controller 2";
-    final String leftFrontMotorName = "Motor 11";
-    final String leftRearMotorName = "Motor 12";
-    final String rightFrontMotorName = "Motor 21";
-    final String rightRearMotorName = "Motor 22";
-    final String intakeSortingServoName = "Servo 11";
+    protected static final double robotDiagonal = 21.45669;
+    protected static final double turnCircumference = robotDiagonal*Math.PI;
 
-    final DcMotor.Direction leftDirection = DcMotor.Direction.FORWARD;
-    final DcMotor.Direction rightDirection = DcMotor.Direction.REVERSE;
+    protected enum FlipperDirection {left,center,right}
+
+    protected static final double flipperCenter = 0.5;
+    protected static final double flipperLeft = 0.6666667;
+    protected static final double flipperRight = 0.2627451;
+
+    protected static final String leftDriveControllerName = "Motor Controller 1";
+    protected static final String rightDriveControllerName = "Motor Controller 2";
+    protected static final String leftFrontMotorName = "Motor 11";
+    protected static final String leftRearMotorName = "Motor 12";
+    protected static final String rightFrontMotorName = "Motor 21";
+    protected static final String rightRearMotorName = "Motor 22";
+    protected static final String flipperName = "Servo 11";
+    protected static final String deviceInterfaceModuleName = "Device Interface Module 1";
+    protected static final String colorSensorName = "iic 10";
+    protected static final String intakeMotorName = "Motor 31";
+
+    protected static final DcMotor.Direction leftDirection = DcMotor.Direction.FORWARD;
+    protected static final DcMotor.Direction rightDirection = DcMotor.Direction.REVERSE;
+
+    //Telemetry config
+    protected static final boolean showDcMotorPower = false;
+    protected static final boolean showServoPosition = true;
+
 }

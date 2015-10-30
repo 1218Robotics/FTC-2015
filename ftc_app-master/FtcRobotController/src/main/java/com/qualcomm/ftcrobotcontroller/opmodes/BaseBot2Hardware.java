@@ -7,11 +7,12 @@ import com.qualcomm.robotcore.hardware.*;
  * Created by jliu on 10/20/15.
  */
 public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
-    protected DcMotorController leftDriveController;
-    protected DcMotorController rightDriveController;
-    protected HalfDrive leftDriveMotor;
-    protected HalfDrive rightDriveMotor;
-    protected Servo intakeSortingServo;
+    protected static DcMotorController leftDriveController;
+    protected static DcMotorController rightDriveController;
+    protected static HalfDrive leftDriveMotor;
+    protected static HalfDrive rightDriveMotor;
+    protected static Servo flipper;
+    protected static DcMotor intakeMotor;
 
     ColorSensor colorSensor;
     DeviceInterfaceModule deviceInterfaceModule;
@@ -25,11 +26,13 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
         rightDriveMotor= new HalfDrive(hardwareMap.dcMotor.get(rightFrontMotorName),
                                         hardwareMap.dcMotor.get(rightRearMotorName),
                                         rightDirection);
-        colorSensor = hardwareMap.colorSensor.get("iic 10");
-        deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get("Device Interface Module 1");
-        intakeSortingServo = hardwareMap.servo.get(intakeSortingServoName);
+        colorSensor = hardwareMap.colorSensor.get(colorSensorName);
+        deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get(deviceInterfaceModuleName);
+        flipper = hardwareMap.servo.get(flipperName);
+        intakeMotor = hardwareMap.dcMotor.get(intakeMotorName);
 
     }
+
     public void stopRobot(){
         leftDriveMotor.setPower(0);
         rightDriveMotor.setPower(0);
@@ -37,7 +40,23 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
         rightDriveMotor.channelMode(DcMotorController.RunMode.RESET_ENCODERS);
     }
 
+    protected void turn(int degree, double power){
+        double driveDistance = (degree/360.0)*turnCircumference;
+        leftDriveMotor.driveInches(driveDistance, power);
+        rightDriveMotor.driveInches(driveDistance, power);
+    }
+
     public boolean isRed(int limit){
         return colorSensor.red() > limit;
+    }
+
+    public void updateTelemetry(){
+        if(showDcMotorPower){
+        }
+        if(showServoPosition){
+            telemetry.addData("Flipper:", flipper.getPosition());
+            telemetry.addData("LB",gamepad1.left_bumper);
+            telemetry.addData("RB",gamepad1.right_bumper);
+        }
     }
 }
