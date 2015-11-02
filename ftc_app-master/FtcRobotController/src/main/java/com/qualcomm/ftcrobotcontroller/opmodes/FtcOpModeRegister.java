@@ -65,6 +65,8 @@ public class FtcOpModeRegister implements OpModeRegister {
 
     manager.register("BaseBot2ManualDemo", BaseBot2ManualDemo.class);
 
+    manager.register("InterfaceIOTest",InterfaceIOTest.class);
+
     /*
      * Uncomment any of the following lines if you want to register an op mode.
      */

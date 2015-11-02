@@ -25,7 +25,7 @@ public abstract class BaseBot2HardwareConfig extends LinearOpMode  {
     protected static final String rightFrontMotorName = "Motor 21";
     protected static final String rightRearMotorName = "Motor 22";
     protected static final String flipperName = "Servo 11";
-    protected static final String deviceInterfaceModuleName = "Device Interface Module 1";
+    protected static final String interfaceIOName = "Device Interface Module 1";
     protected static final String colorSensorName = "iic 10";
     protected static final String intakeMotorName = "Motor 31";
 

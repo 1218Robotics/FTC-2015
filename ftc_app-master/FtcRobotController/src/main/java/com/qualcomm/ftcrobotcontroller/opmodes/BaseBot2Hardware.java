@@ -1,6 +1,7 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
 import com.qualcomm.ftcrobotcontroller.hardwareinterface.HalfDrive;
+import com.qualcomm.ftcrobotcontroller.hardwareinterface.InterfaceIO;
 import com.qualcomm.robotcore.hardware.*;
 
 /**
@@ -13,6 +14,7 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
     protected static HalfDrive rightDriveMotor;
     protected static Servo flipper;
     protected static DcMotor intakeMotor;
+    protected static InterfaceIO interfaceIO;
 
     ColorSensor colorSensor;
     DeviceInterfaceModule deviceInterfaceModule;
@@ -27,9 +29,10 @@ public abstract class BaseBot2Hardware extends BaseBot2HardwareConfig {
                                         hardwareMap.dcMotor.get(rightRearMotorName),
                                         rightDirection);
         colorSensor = hardwareMap.colorSensor.get(colorSensorName);
-        deviceInterfaceModule = hardwareMap.deviceInterfaceModule.get(deviceInterfaceModuleName);
         flipper = hardwareMap.servo.get(flipperName);
         intakeMotor = hardwareMap.dcMotor.get(intakeMotorName);
+
+        interfaceIO = new InterfaceIO(hardwareMap.deviceInterfaceModule.get(interfaceIOName));
 
     }
 
