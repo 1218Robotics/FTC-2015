@@ -8,10 +8,10 @@ import com.qualcomm.robotcore.hardware.DigitalChannelController;
  * Created by jliu on 10/22/15.
  */
 public class InterfaceIO {
-    final boolean HIGH = true;
-    final boolean LOW = false;
-    final DigitalChannelController.Mode INPUT = DigitalChannelController.Mode.INPUT;
-    final DigitalChannelController.Mode OUTPUT = DigitalChannelController.Mode.OUTPUT;
+    public static final boolean HIGH = true;
+    public static final boolean LOW = false;
+    public static final DigitalChannelController.Mode INPUT = DigitalChannelController.Mode.INPUT;
+    public static final DigitalChannelController.Mode OUTPUT = DigitalChannelController.Mode.OUTPUT;
 
     protected DeviceInterfaceModule deviceInterfaceModule;
 
