@@ -1,5 +1,6 @@
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
+import com.qualcomm.ftcrobotcontroller.hardwareinterface.InterfaceIO;
 import com.qualcomm.robotcore.hardware.DigitalChannelController;
 import com.qualcomm.robotcore.util.Range;
 
@@ -12,13 +13,16 @@ public class InterfaceIOTest extends BaseBot2Manual {
         interfaceIO.pinMode(0, DigitalChannelController.Mode.INPUT);
         interfaceIO.pinMode(1, DigitalChannelController.Mode.OUTPUT);
         interfaceIO.setPwmFrequency(0, 1000);
-        interfaceIO.setPwmDutyCycle(0,0.5);
+        interfaceIO.setPwmDutyCycle(0, 0.5);
+        interfaceIO.setAnalogOutputMode(0, InterfaceIO.TRIANGLE);
+        interfaceIO.setAnalogOutputFrequency(0,1000);
     }
 
     @Override
     protected void mainLoop() {
         interfaceIO.digitalWrite(1,interfaceIO.digitalRead(0));
         interfaceIO.setPwmDutyCycle(0,interfaceIO.analogReadVolts(0)/5);
+        interfaceIO.setAnalogOutputCounts(0,1000);
         if(interfaceIO.digitalRead(0)){
             leftDriveMotor.setPower(0.5);
         }else{
