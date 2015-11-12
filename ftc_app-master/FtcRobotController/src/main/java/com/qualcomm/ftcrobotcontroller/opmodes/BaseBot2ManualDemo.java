@@ -14,17 +14,7 @@ public class BaseBot2ManualDemo extends BaseBot2Manual {
         leftDriveMotor.setPower(leftDrivePower);
         rightDriveMotor.setPower(rightDrivePower);
         intakeMotor.setPower(gamepad1.left_trigger);
-        updateFlipper();
         updateTelemetry();
     }
 
-    protected void updateFlipper(){
-        if (gamepad1.left_bumper){
-            flipper.setPosition(flipperLeft);
-        }else if(gamepad1.right_bumper){
-            flipper.setPosition(flipperRight);
-        }else{
-            flipper.setPosition(flipperCenter);
-        }
-    }
 }

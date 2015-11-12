@@ -8,6 +8,8 @@ import com.qualcomm.robotcore.hardware.DcMotorController.*;
 /**
  * Created by rgoudy on 10/13/15.
  */
+
+@Deprecated
 public class HalfDrive {
 
     protected final double countsPerRotation = 1120;
@@ -47,8 +49,8 @@ public class HalfDrive {
     }
 
     public void channelMode(DcMotorController.RunMode runMode) {
-        front.setChannelMode(runMode);
-        back.setChannelMode(runMode);
+        front.setMode(runMode);
+        back.setMode(runMode);
     }
 
     public void driveInches(double inches, double power) {
