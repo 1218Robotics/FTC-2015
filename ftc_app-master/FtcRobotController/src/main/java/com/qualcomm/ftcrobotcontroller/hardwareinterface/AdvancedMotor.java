@@ -6,37 +6,19 @@ import com.qualcomm.robotcore.hardware.DcMotorController;
 /**
  * Created by jliu on 11/12/15.
  */
-public class AdvancedMotor{
-    protected DcMotor dcMotor;
-
-    public AdvancedMotor(DcMotor dcMotor,DcMotor.Direction direction){
-        this.dcMotor = dcMotor;
-        dcMotor.setDirection(direction);
+public class AdvancedMotor extends DcMotor{
+    public AdvancedMotor(DcMotorController controller, int portNumber){
+        super(controller, portNumber);
     }
 
-    public void setPower(double power){
-        dcMotor.setPower(power);
-    }
-
-    public void setDirection(DcMotor.Direction direction) {
-        dcMotor.setDirection(direction);
-    }
-
-    public void setTargetPosition(int targetPosition) {
-        dcMotor.setTargetPosition(targetPosition);
-    }
-
-    public void setMode(DcMotorController.RunMode runMode) {
-        dcMotor.setMode(runMode);
+    public AdvancedMotor(DcMotor dcMotor){
+        super(dcMotor.getController(),dcMotor.getPortNumber());
     }
 
     public void driveCounts(int counts, double power) {
-        setMode(DcMotorController.RunMode.RESET_ENCODERS);
-        setTargetPosition(counts);
-        setPower(power);
+        this.setMode(DcMotorController.RunMode.RESET_ENCODERS);
+        this.setPower(1.0);
+        this.setTargetPosition(counts);
+        this.setMode(DcMotorController.RunMode.RUN_TO_POSITION);
     }
-
-
-
-
 }

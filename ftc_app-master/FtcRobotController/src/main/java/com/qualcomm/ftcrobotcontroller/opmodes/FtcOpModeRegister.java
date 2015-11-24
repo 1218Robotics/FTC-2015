@@ -31,7 +31,11 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
 
 package com.qualcomm.ftcrobotcontroller.opmodes;
 
-import com.qualcomm.ftcrobotcontroller.hardwareinterface.InterfaceIO;
+import com.qualcomm.ftcrobotcontroller.opmodes.FTCDemo.InterfaceIOTest;
+import com.qualcomm.ftcrobotcontroller.opmodes.FTCDemo.MRGyroTest;
+//import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.VarmintColorSensorDemo;
+import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintManualDemo;
+import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintMotorTest;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
 
@@ -56,17 +60,18 @@ public class FtcOpModeRegister implements OpModeRegister {
      * If two or more op modes are registered with the same name, the app will display an error.
      */
 
-    manager.register("NullOp", NullOp.class);
+    //manager.register("NullOp", NullOp.class);
 
     //manager.register("MatrixK9TeleOp", MatrixK9TeleOp.class);
-    manager.register("K9TeleOp", K9TeleOp.class);
-    manager.register("K9Line", K9Line.class);
-    manager.register ("PushBotAuto", PushBotAuto.class);
-    manager.register ("PushBotManual", PushBotManual.class);
+    //manager.register("K9TeleOp", K9TeleOp.class);
+    //manager.register("K9Line", K9Line.class);
+    //manager.register ("PushBotAuto", PushBotAuto.class);
+    //manager.register ("PushBotManual", PushBotManual.class);
 
-    manager.register("BaseBot2ManualDemo",BaseBot2ManualDemo.class);
-    manager.register("BaseBot2ColorSensorDemo",BaseBot2ColorSensorDemo.class);
+    manager.register("VarmintManualDemo",VarmintManualDemo.class);
+    //manager.register("VarmintColorSensorDemo",VarmintColorSensorDemo.class);
     manager.register("InterfaceIOTest", InterfaceIOTest.class);
+    manager.register("VarmintMotorTest",VarmintMotorTest.class);
 
 
 
