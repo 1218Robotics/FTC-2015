@@ -2,6 +2,7 @@ package com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes;
 
 import com.qualcomm.ftcrobotcontroller.hardwareinterface.*;
 import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.SubSystems.Arm;
+import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.SubSystems.DriveTrain;
 import com.qualcomm.robotcore.hardware.*;
 
 /**
@@ -9,46 +10,41 @@ import com.qualcomm.robotcore.hardware.*;
  */
 public abstract class VarmintHardware extends VarmintHardwareConfig {
     protected static DcMotorController DriveMotorController;
-    protected static DriveMotor leftDriveMotor;
-    protected static DriveMotor rightDriveMotor;
+    protected static DriveTrain driveTrain;
     protected static DcMotor intakeMotor;
+    protected static DcMotor beltMotor;
     protected static InterfaceIO interfaceIO;
-    protected static Arm arm;
+    protected static Servo leftRampServo;
+    protected static Servo rightRampServo;
 
     ColorSensor colorSensor;
     DeviceInterfaceModule deviceInterfaceModule;
 
     public void initRobot(){
         DriveMotorController = hardwareMap.dcMotorController.get(driveMotorControllerName);
-        leftDriveMotor = new DriveMotor(hardwareMap.dcMotor.get(leftMotorName));
-        rightDriveMotor = new DriveMotor(hardwareMap.dcMotor.get(rightMotorName));
-        leftDriveMotor.setDirection(leftDirection);
-        rightDriveMotor.setDirection(rightDirection);
+        driveTrain = new DriveTrain(hardwareMap.dcMotor.get(leftMotorName),hardwareMap.dcMotor.get(rightMotorName));
         intakeMotor = hardwareMap.dcMotor.get(intakeMotorName);
+        beltMotor = hardwareMap.dcMotor.get(beltMotorName);
         interfaceIO = new InterfaceIO(hardwareMap.deviceInterfaceModule.get(interfaceIOName));
-        arm = new Arm(hardwareMap.dcMotor.get(armMotorName),hardwareMap.servo.get(armServo1Name),hardwareMap.servo.get(armServo2Name));
+        leftRampServo = hardwareMap.servo.get(leftRampServoName);
+        rightRampServo = hardwareMap.servo.get(rightRampServoName);
 
     }
 
     public void stopRobot(){
-        leftDriveMotor.setPower(0);
-        rightDriveMotor.setPower(0);
-        leftDriveMotor.setMode(DcMotorController.RunMode.RESET_ENCODERS);
-        rightDriveMotor.setMode(DcMotorController.RunMode.RESET_ENCODERS);
+        driveTrain.stop();
     }
 
-    protected void turn(int degree, double power){
+    /*protected void turn(int degree, double power){
         double driveDistance = (degree/360.0)*turnCircumference;
         leftDriveMotor.driveInches(driveDistance, power);
         rightDriveMotor.driveInches(driveDistance, power);
-    }
+    }*/
 
     public void updateTelemetry(){
-        if(showDcMotorPower){
-        }
-        if(showServoPosition){
-            telemetry.addData("ArmServo1",arm.baseServo1.getPosition());
-            telemetry.addData("ArmServo2",arm.baseServo2.getPosition());
-        }
+        telemetry.addData("Left Power:",driveTrain.leftMotor.getPower());
+        telemetry.addData("Left Encoder:",driveTrain.leftMotor.getCurrentPosition());
+        telemetry.addData("Right Power:",driveTrain.rightMotor.getPower());
+        telemetry.addData("Right Encoder:",driveTrain.rightMotor.getCurrentPosition());
     }
 }

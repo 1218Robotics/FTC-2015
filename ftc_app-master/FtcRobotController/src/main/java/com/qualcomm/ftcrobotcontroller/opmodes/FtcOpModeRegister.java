@@ -35,6 +35,8 @@ import com.qualcomm.ftcrobotcontroller.opmodes.FTCDemo.InterfaceIOTest;
 import com.qualcomm.ftcrobotcontroller.opmodes.FTCDemo.MRGyroTest;
 //import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.VarmintColorSensorDemo;
 import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintManualDemo;
+import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintManualJordanJoe;
+import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintManualJuliaAmy;
 import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintMotorTest;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeManager;
 import com.qualcomm.robotcore.eventloop.opmode.OpModeRegister;
@@ -72,6 +74,8 @@ public class FtcOpModeRegister implements OpModeRegister {
     //manager.register("VarmintColorSensorDemo",VarmintColorSensorDemo.class);
     manager.register("InterfaceIOTest", InterfaceIOTest.class);
     manager.register("VarmintMotorTest",VarmintMotorTest.class);
+    manager.register("Jordan Joe Manual", VarmintManualJordanJoe.class);
+    manager.register("Amy Julia Manual", VarmintManualJuliaAmy.class);
 
 
 

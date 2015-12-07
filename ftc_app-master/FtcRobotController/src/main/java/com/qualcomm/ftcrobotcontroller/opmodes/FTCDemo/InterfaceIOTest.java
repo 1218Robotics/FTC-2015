@@ -1,6 +1,7 @@
 package com.qualcomm.ftcrobotcontroller.opmodes.FTCDemo;
 
 import com.qualcomm.ftcrobotcontroller.hardwareinterface.InterfaceIO;
+import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.SubSystems.DriveTrain;
 import com.qualcomm.ftcrobotcontroller.opmodes.Varmint.opmodes.VarmintManual;
 import com.qualcomm.robotcore.hardware.DigitalChannelController;
 
@@ -24,9 +25,9 @@ public class InterfaceIOTest extends VarmintManual {
         interfaceIO.setPwmDutyCycle(0,interfaceIO.analogReadVolts(0)/5);
         interfaceIO.setAnalogOutputCounts(0,1000);
         if(interfaceIO.digitalRead(0)){
-            leftDriveMotor.setPower(0.5);
+            driveTrain.leftMotor.setPower(0.5);
         }else{
-            leftDriveMotor.setPower(0);
+            driveTrain.leftMotor.setPower(0);
         }
         telemetry.addData("A0 Counts:",interfaceIO.analogRead(0));
         telemetry.addData("A0 Volts:", interfaceIO.analogReadVolts(0));

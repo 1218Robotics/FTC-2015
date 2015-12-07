@@ -16,7 +16,7 @@ public abstract class VarmintManual extends VarmintHardware {
         stopRobot();
     }
 
-    protected void setup(){
+    protected void setup() throws InterruptedException{
         //this function is designed to be overridden.
         //override this function for any setup work.
         //this function will be called right before the main function starts.

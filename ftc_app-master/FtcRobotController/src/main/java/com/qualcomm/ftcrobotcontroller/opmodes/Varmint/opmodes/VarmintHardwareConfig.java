@@ -18,11 +18,11 @@ public abstract class VarmintHardwareConfig extends LinearOpMode  {
     protected static final String leftMotorName = "Motor 41";
     protected static final String rightMotorName = "Motor 42";
     protected static final String interfaceIOName = "Device Interface Module 2";
-    protected static final String intakeMotorName = "Motor 12";
-    protected static final String armMotorName = "Motor 11";
+    protected static final String intakeMotorName = "Motor 11";
+    protected static final String beltMotorName = "Motor 12";
 
-    protected static final String armServo1Name = "Servo 31";
-    protected static final String armServo2Name = "Servo 32";
+    protected static final String leftRampServoName = "Servo 31";
+    protected static final String rightRampServoName = "Servo 32";
 
     protected static final DcMotor.Direction leftDirection = DcMotor.Direction.FORWARD;
     protected static final DcMotor.Direction rightDirection = DcMotor.Direction.REVERSE;
